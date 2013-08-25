@@ -16,6 +16,6 @@ define ( 'APP_CONFIG', APP_PATH . 'Config' . DIRECTORY_SEPARATOR . 'App.ini' );
 
 //加载引导文件
 include_once '../../HuiLib/Bootstrap.php';
-\HuiLib\Bootstrap::getInstance()->createApp()->run();
+\HuiLib\Bootstrap::getInstance()->createApp(APP_CONFIG)->run();
 
 
