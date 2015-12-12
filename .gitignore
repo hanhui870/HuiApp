@@ -1,4 +1,7 @@
-/Public/Attach
-/Public/Css/Cache
-/Data
 .tmp*~
+*.view
+*.log
+*.cache
+.settings
+.buildpath
+.project
