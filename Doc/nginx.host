@@ -1,0 +1,24 @@
+server
+  {
+    listen       80;
+    server_name  huiapp;
+    index index.php index.htm;
+    root  /var/www/HuiApp/Public;
+
+    if (!-f $request_filename) {
+        rewrite ^/(.*)$ /index.php break;
+    }
+
+    proxy_set_header Host $proxy_host;
+
+    location ~ .*\.(php|php5)?$
+    {
+      fastcgi_pass  127.0.0.1:9000;
+      fastcgi_index index.php;
+      #定义项目运行环境，以下两条要连在一起，fastcgi_params要重新导入，不然会空白，在http模板导入的会失效
+      fastcgi_param SERVER_ENV production;
+      include  /usr/local/nginx/conf/fastcgi_params;
+    }
+
+    access_log  /var/log/nginx/huiapp.log;
+   }
