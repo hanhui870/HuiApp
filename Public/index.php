@@ -18,6 +18,6 @@ define ( 'APP_CONFIG', APP_PATH . 'Config' . DIRECTORY_SEPARATOR . 'App.ini' );
 define ( 'APP_DATA', APP_PATH.'Data');
 
 //加载引导文件
-include_once '../../HuiLib/Bootstrap.php';
+include_once '../../HuiLib-GitHub/Bootstrap.php';
 \HuiLib\Bootstrap::create()->createApp(APP_CONFIG)->run();
 

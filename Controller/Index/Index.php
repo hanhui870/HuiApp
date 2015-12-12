@@ -17,6 +17,7 @@ class Index extends \Controller\Base
     
 	public function indexAction()
 	{
+	    echo '<title>HuiApp</title>';
 	    echo 'Hello world';
 	    exit;
 	}
